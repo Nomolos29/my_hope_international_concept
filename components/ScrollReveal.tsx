@@ -3,10 +3,29 @@ import { useEffect } from "react";
 
 export default function ScrollReveal() {
   useEffect(() => {
-    // Mark body so CSS can apply the hidden state
-    document.body.classList.add("js-ready");
-
     const sel = ".reveal, .reveal-left, .reveal-right";
+    const els = Array.from(document.querySelectorAll<Element>(sel));
+
+    els.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) {
+        // In viewport — reveal immediately with no animation
+        (el as HTMLElement).style.transition = "none";
+        el.classList.add("revealed");
+        // Re-enable transition after a frame so future changes animate
+        requestAnimationFrame(() => {
+          (el as HTMLElement).style.transition = "";
+        });
+      } else {
+        // Off-screen — hide it first (before transition kicks in)
+        (el as HTMLElement).style.transition = "none";
+        el.classList.add("will-animate");
+        // Then enable transition so the reveal animates
+        requestAnimationFrame(() => {
+          (el as HTMLElement).style.transition = "";
+        });
+      }
+    });
 
     const obs = new IntersectionObserver(
       (entries) => {
@@ -17,30 +36,14 @@ export default function ScrollReveal() {
           }
         });
       },
-      { threshold: 0.07, rootMargin: "0px 0px -32px 0px" }
+      { threshold: 0.07, rootMargin: "0px 0px -24px 0px" }
     );
 
-    const attach = () => {
-      document.querySelectorAll<Element>(sel).forEach((el) => {
-        const r = el.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) {
-          // Already visible — reveal immediately, no animation needed
-          el.classList.add("revealed");
-        } else {
-          obs.observe(el);
-        }
-      });
-    };
-
-    // Run immediately after paint
-    requestAnimationFrame(() => {
-      requestAnimationFrame(attach);
+    els.forEach((el) => {
+      if (el.classList.contains("will-animate")) obs.observe(el);
     });
 
-    return () => {
-      obs.disconnect();
-      document.body.classList.remove("js-ready");
-    };
+    return () => obs.disconnect();
   }, []);
 
   return null;
