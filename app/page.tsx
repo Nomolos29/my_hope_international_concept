@@ -45,11 +45,11 @@ export default function HomePage() {
         <div style={{ position:"absolute", top:-120, right:-80, width:560, height:560, borderRadius:"50%", background:"radial-gradient(circle,rgba(45,125,111,0.2) 0%,transparent 70%)", pointerEvents:"none" }} />
         <div style={{ position:"absolute", bottom:-80, left:-60, width:380, height:380, borderRadius:"50%", background:"radial-gradient(circle,rgba(201,150,58,0.12) 0%,transparent 70%)", pointerEvents:"none" }} />
 
-        <div style={{ maxWidth:1200, margin:"0 auto", padding:"80px 24px 0", width:"100%", position:"relative", zIndex:1 }}>
-          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:60, alignItems:"center" }} className="grid-2col">
+        <div style={{ maxWidth:1200, margin:"0 auto", padding:"80px 24px 0", width:"100%", position:"relative", zIndex:1 }} className="hero-section-inner">
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:60, alignItems:"center" }} className="grid-2col hero-grid">
 
-            {/* Left */}
-            <div>
+            {/* Left — text block */}
+            <div className="hero-left">
               <div className="hero-badge pill" style={{ background:"rgba(45,125,111,0.18)", color:"#7dd3c8", border:"1px solid rgba(45,125,111,0.35)", marginBottom:28 }}>
                 <span style={{ width:6, height:6, borderRadius:"50%", background:"#6ee7b7", display:"inline-block" }} />
                 CAC Registered · Nigeria
@@ -66,12 +66,14 @@ export default function HomePage() {
                 MYHOPE INTERNATIONAL CONCEPTS LTD — a multi-sector Nigerian company delivering excellence in Construction, Renewable Energy, and Creative Branding.
               </p>
 
-              <div className="hero-cta" style={{ display:"flex", gap:14, flexWrap:"wrap" }}>
+              {/* Buttons — order 1 on mobile */}
+              <div className="hero-cta hero-buttons" style={{ display:"flex", gap:14, flexWrap:"wrap" }}>
                 <Link href="/services" className="btn btn-primary">Explore Services →</Link>
                 <Link href="/contact" className="btn btn-outline">Get in Touch</Link>
               </div>
 
-              <div style={{ display:"flex", gap:32, marginTop:52, paddingTop:32, borderTop:"1px solid rgba(255,255,255,0.08)" }}>
+              {/* Stats — order 3 on mobile (after images) */}
+              <div className="hero-stats" style={{ display:"flex", gap:32, marginTop:52, paddingTop:32, borderTop:"1px solid rgba(255,255,255,0.08)" }}>
                 {stats.map((s) => (
                   <div key={s.label}>
                     <div style={{ fontSize:"1.6rem", fontWeight:900, color:"#fff", lineHeight:1 }}>{s.value}</div>
@@ -82,8 +84,8 @@ export default function HomePage() {
             </div>
 
             {/* Right — three professionals in active service */}
-            <div className="hero-visual hide-mobile" style={{ position:"relative", height:500 }}>
-              <div style={{ position:"absolute", top:0, right:0, width:"100%", height:"100%", display:"flex", gap:10, alignItems:"flex-end" }}>
+            <div className="hero-visual" style={{ position:"relative", height:500 }}>
+              <div className="hero-visual-inner" style={{ position:"absolute", top:0, right:0, width:"100%", height:"100%", display:"flex", gap:10, alignItems:"flex-end" }}>
 
                 {/* Construction worker / site engineer with hard hat */}
                 <div style={{ flex:1, height:"86%", borderRadius:18, overflow:"hidden", position:"relative", boxShadow:"0 24px 56px rgba(0,0,0,0.45)" }}>
@@ -325,9 +327,12 @@ export default function HomePage() {
         @media (max-width: 900px) {
           .bento-grid { grid-template-columns: 1fr 1fr !important; grid-template-rows: auto !important; }
           .bento-grid > div:first-child { grid-row: span 1 !important; }
+          .hero-visual { height: 360px !important; }
         }
         @media (max-width: 600px) {
           .bento-grid { grid-template-columns: 1fr !important; }
+          .hero-visual { height: 300px !important; }
+          .hero-visual-inner > div { border-radius: 12px !important; }
         }
       `}</style>
     </>
