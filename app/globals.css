@@ -1,26 +1,233 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #ffffff;
+  --fg: #1a1a2e;
+  --muted: #6b7280;
+  --border: #e8e8f0;
+  --card: #fafafa;
+
+  /* Primary: warm teal/sage */
+  --primary: #2d7d6f;
+  --primary-light: #3a9e8d;
+  --primary-dark: #1f5c52;
+  --primary-bg: #edf7f5;
+
+  /* Accent: warm gold */
+  --accent: #c9963a;
+  --accent-bg: #fdf4e7;
+
+  /* Dark navy for hero sections */
+  --navy: #1a1a2e;
+  --navy-mid: #252545;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── KEYFRAMES ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ── HERO ENTRY ANIMATIONS (CSS-only, no JS needed) ── */
+.hero-badge  { animation: fadeIn  0.5s 0.05s ease both; }
+.hero-title  { animation: fadeUp  0.7s 0.15s ease both; }
+.hero-sub    { animation: fadeUp  0.7s 0.28s ease both; }
+.hero-cta    { animation: fadeUp  0.7s 0.42s ease both; }
+.hero-visual { animation: fadeIn  0.9s 0.2s  ease both; }
+
+/* ── SCROLL REVEAL ──
+   Elements are VISIBLE by default.
+   Only hidden after JS adds .js-ready to <body>.
+   Once .revealed is added, always visible.
+*/
+.reveal,
+.reveal-left,
+.reveal-right {
+  /* visible by default — no opacity:0 here */
+  transition: opacity 0.65s cubic-bezier(.16,1,.3,1), transform 0.65s cubic-bezier(.16,1,.3,1);
+}
+
+body.js-ready .reveal       { opacity: 0; transform: translateY(32px); }
+body.js-ready .reveal-left  { opacity: 0; transform: translateX(-32px); }
+body.js-ready .reveal-right { opacity: 0; transform: translateX(32px); }
+
+.reveal.revealed,
+.reveal-left.revealed,
+.reveal-right.revealed {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.delay-1 { transition-delay: 0.08s; }
+.delay-2 { transition-delay: 0.16s; }
+.delay-3 { transition-delay: 0.24s; }
+.delay-4 { transition-delay: 0.32s; }
+.delay-5 { transition-delay: 0.40s; }
+
+/* ── HOVER LIFT ── */
+.hover-lift {
+  transition: transform 0.28s cubic-bezier(.16,1,.3,1), box-shadow 0.28s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 44px rgba(0,0,0,0.10);
+}
+
+/* ── FLOAT ── */
+.float       { animation: float 4s ease-in-out infinite; }
+.float-delay { animation: float 4s 1.8s ease-in-out infinite; }
+
+/* ── MARQUEE ── */
+.marquee-track { animation: marquee 30s linear infinite; }
+
+/* ── GRADIENT TEXT ── */
+.gradient-text {
+  background: linear-gradient(135deg, #3a9e8d 0%, #c9963a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── PILL ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ── SECTION LABEL ── */
+.section-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  font-family: inherit;
+  white-space: nowrap;
+  line-height: 1;
+}
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.btn-primary:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(45,125,111,0.35);
+}
+/* On dark backgrounds — white outlined */
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255,255,255,0.5);
+}
+.btn-outline:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.8);
+  transform: translateY(-2px);
+}
+/* On light backgrounds — teal outlined */
+.btn-outline-dark {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.btn-outline-dark:hover {
+  background: var(--primary-bg);
+  transform: translateY(-2px);
+}
+.btn-gold {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn-gold:hover {
+  background: #b8852e;
+  border-color: #b8852e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,150,58,0.35);
+}
+
+/* ── IMAGE PLACEHOLDER ── */
+.img-placeholder {
+  background: linear-gradient(135deg, #1f5c52 0%, #2d7d6f 60%, #3a9e8d 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.55);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+.img-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg, transparent, transparent 24px,
+    rgba(255,255,255,0.025) 24px, rgba(255,255,255,0.025) 48px
+  );
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .grid-2col { grid-template-columns: 1fr !important; }
+  .grid-3col { grid-template-columns: 1fr 1fr !important; }
+  .grid-4col { grid-template-columns: 1fr 1fr !important; }
+  .hide-mobile { display: none !important; }
+}
+@media (max-width: 600px) {
+  .grid-3col      { grid-template-columns: 1fr !important; }
+  .grid-4col      { grid-template-columns: 1fr !important; }
+  .grid-form-2col { grid-template-columns: 1fr !important; }
+  .stack-mobile   { flex-direction: column !important; }
 }
