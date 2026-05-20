@@ -85,52 +85,48 @@ export default function HomePage() {
             <div className="hero-visual hide-mobile" style={{ position:"relative", height:500 }}>
               <div style={{ position:"absolute", top:0, right:0, width:"100%", height:"100%", display:"flex", gap:10, alignItems:"flex-end" }}>
 
-                {/* Architect / Construction */}
-                <div style={{ flex:1, height:"86%", borderRadius:18, overflow:"hidden", position:"relative", boxShadow:"0 24px 56px rgba(0,0,0,0.4)" }}>
+                {/* Construction worker / site engineer with hard hat */}
+                <div style={{ flex:1, height:"86%", borderRadius:18, overflow:"hidden", position:"relative", boxShadow:"0 24px 56px rgba(0,0,0,0.45)" }}>
                   <img
-                    src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=400&q=85&fit=crop&crop=top"
-                    alt="Architect with hard hat and blueprints"
-                    style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top center" }}
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=90&fit=crop&crop=faces,top"
+                    alt="Construction engineer with hard hat on site"
+                    style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top" }}
                   />
-                  <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top, rgba(26,26,46,0.88) 0%, rgba(26,26,46,0.15) 50%, transparent 100%)" }} />
+                  <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top, rgba(26,26,46,0.9) 0%, rgba(26,26,46,0.2) 45%, transparent 100%)" }} />
                   <div style={{ position:"absolute", bottom:16, left:12, right:12 }}>
                     <div style={{ fontSize:9, fontWeight:800, color:"#7dd3c8", letterSpacing:1.2, textTransform:"uppercase", marginBottom:3 }}>Construction</div>
-                    <div style={{ fontSize:13, fontWeight:800, color:"#fff", lineHeight:1.2 }}>Site Architect</div>
+                    <div style={{ fontSize:13, fontWeight:800, color:"#fff", lineHeight:1.2 }}>Site Engineer</div>
                   </div>
                 </div>
 
-                {/* Designer */}
-                <div style={{ flex:1, height:"100%", borderRadius:18, overflow:"hidden", position:"relative", boxShadow:"0 24px 56px rgba(0,0,0,0.4)" }}>
+                {/* Graphic designer at work with tablet/screen */}
+                <div style={{ flex:1, height:"100%", borderRadius:18, overflow:"hidden", position:"relative", boxShadow:"0 24px 56px rgba(0,0,0,0.45)" }}>
                   <img
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=85&fit=crop&crop=top"
-                    alt="Graphic designer working on branding"
-                    style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top center" }}
+                    src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=90&fit=crop&crop=faces,top"
+                    alt="Graphic designer working on creative project"
+                    style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top" }}
                   />
-                  <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top, rgba(201,150,58,0.82) 0%, rgba(26,26,46,0.1) 50%, transparent 100%)" }} />
+                  <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top, rgba(201,150,58,0.88) 0%, rgba(26,26,46,0.05) 48%, transparent 100%)" }} />
                   <div style={{ position:"absolute", bottom:16, left:12, right:12 }}>
                     <div style={{ fontSize:9, fontWeight:800, color:"#fde68a", letterSpacing:1.2, textTransform:"uppercase", marginBottom:3 }}>Branding</div>
                     <div style={{ fontSize:13, fontWeight:800, color:"#fff", lineHeight:1.2 }}>Lead Designer</div>
                   </div>
                 </div>
 
-                {/* Solar Installer */}
-                <div style={{ flex:1, height:"86%", borderRadius:18, overflow:"hidden", position:"relative", boxShadow:"0 24px 56px rgba(0,0,0,0.4)" }}>
+                {/* Solar technician installing panels */}
+                <div style={{ flex:1, height:"86%", borderRadius:18, overflow:"hidden", position:"relative", boxShadow:"0 24px 56px rgba(0,0,0,0.45)" }}>
                   <img
-                    src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=85&fit=crop&crop=top"
-                    alt="Solar panel installer on rooftop"
-                    style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"top center" }}
+                    src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=500&q=90&fit=crop&crop=faces,top"
+                    alt="Solar technician installing solar panels"
+                    style={{ width:"100%", height:"100%", objectFit:"cover", objectPosition:"center top" }}
                   />
-                  <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top, rgba(45,125,111,0.88) 0%, rgba(26,26,46,0.1) 50%, transparent 100%)" }} />
+                  <div style={{ position:"absolute", inset:0, background:"linear-gradient(to top, rgba(45,125,111,0.9) 0%, rgba(26,26,46,0.1) 48%, transparent 100%)" }} />
                   <div style={{ position:"absolute", bottom:16, left:12, right:12 }}>
                     <div style={{ fontSize:9, fontWeight:800, color:"#6ee7b7", letterSpacing:1.2, textTransform:"uppercase", marginBottom:3 }}>Solar Energy</div>
-                    <div style={{ fontSize:13, fontWeight:800, color:"#fff", lineHeight:1.2 }}>Field Installer</div>
+                    <div style={{ fontSize:13, fontWeight:800, color:"#fff", lineHeight:1.2 }}>Field Technician</div>
                   </div>
                 </div>
-              </div>
 
-              {/* CAC badge */}
-              <div style={{ position:"absolute", top:16, left:-8, background:"rgba(255,255,255,0.13)", border:"1px solid rgba(255,255,255,0.22)", borderRadius:12, padding:"9px 15px", color:"#fff", fontWeight:700, fontSize:12, zIndex:10, backdropFilter:"blur(10px)" }}>
-                ✅ CAC Registered
               </div>
             </div>
           </div>
