@@ -69,9 +69,9 @@ export default function ContactPage() {
           <div>
             <div style={{ display:"flex", flexDirection:"column", gap:14, marginBottom:24 }}>
               {[
-                { icon:"📍", label:"Office Address", value:"Nigeria", sub:"Nationwide Operations", color:"var(--primary-bg)", accent:"var(--primary)" },
-                { icon:"📞", label:"Phone Number", value:"+234 800 000 0000", sub:"Mon – Fri, 8am – 6pm", color:"#fdf4e7", accent:"var(--accent)" },
-                { icon:"✉️", label:"Email Address", value:"info@myhopeconcepts.com", sub:"We reply within 24 hours", color:"var(--primary-bg)", accent:"var(--primary)" },
+                { icon:"📍", label:"Office Address", value:"No 1, Habitation of Hope Crescent  Laburo, Mowe,  Ogun State.", sub:"We Deliver Nationwide", color:"var(--primary-bg)", accent:"var(--primary)" },
+                { icon:"📞", label:"Phone Number", value:"+234 802 388 4054, +234 704 006 7260", sub:"Mon – Fri, 8am – 6pm", color:"#fdf4e7", accent:"var(--accent)" },
+                { icon:"✉️", label:"Email Address", value:"myhopeintenational@gmail.com", sub:"We reply within 24 hours", color:"var(--primary-bg)", accent:"var(--primary)" },
               ].map((c, i) => (
                 <div key={c.label} className={`reveal delay-${i + 1}`} style={{ background:"#fff", borderRadius:14, padding:"16px 18px", border:"1px solid var(--border)", display:"flex", gap:14, alignItems:"center", boxShadow:"0 2px 10px rgba(0,0,0,0.04)" }}>
                   <div style={{ width:44, height:44, borderRadius:10, background:c.color, display:"flex", alignItems:"center", justifyContent:"center", fontSize:19, flexShrink:0, borderLeft:`3px solid ${c.accent}` }}>
