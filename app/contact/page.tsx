@@ -49,7 +49,7 @@ export default function ContactPage() {
     <>
       {/* ── HERO ── */}
       <section style={{ background:"var(--navy)", padding:"96px 24px 80px", position:"relative", overflow:"hidden" }}>
-        <div style={{ position:"absolute", inset:0, backgroundImage:"linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px)", backgroundSize:"60px 60px", pointerEvents:"none" }} />
+        <div style={{ position:"absolute", inset:0, backgroundImage:"linear-gradient(rgba(247, 224, 19, 0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px)", backgroundSize:"60px 60px", pointerEvents:"none" }} />
         <div style={{ position:"absolute", top:-80, right:-80, width:480, height:480, borderRadius:"50%", background:"radial-gradient(circle,rgba(45,125,111,0.15) 0%,transparent 70%)", pointerEvents:"none" }} />
         <div style={{ maxWidth:1200, margin:"0 auto", position:"relative", zIndex:1 }}>
           <div className="pill hero-badge" style={{ background:"rgba(45,125,111,0.18)", color:"#7dd3c8", border:"1px solid rgba(45,125,111,0.3)", marginBottom:22 }}>Contact Us</div>
