@@ -173,13 +173,13 @@ export default function AboutPage() {
       </section>
 
       {/* Key Personnel */}
-      <section style={{ padding:"80px 24px 96px", background:"#f7faf9" }}>
+      {/* <section style={{ padding:"80px 24px 96px", background:"#f7faf9" }}>
         <div style={{ maxWidth:1200, margin:"0 auto" }}>
           <div className="reveal" style={{ textAlign:"center", marginBottom:48 }}>
             <div className="section-label" style={{ marginBottom:12 }}>Our Team</div>
             <h2 style={{ fontSize:"clamp(1.8rem,3vw,2.4rem)", fontWeight:900, letterSpacing:-0.5 }}>The People Behind MYHOPE</h2>
           </div>
-          {/* <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:22, maxWidth:780, margin:"0 auto" }} className="grid-3col">
+          <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:22, maxWidth:780, margin:"0 auto" }} className="grid-3col">
             {[
               { role:"Director / CEO", name:"Company Director", img:"https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80", alt:"Professional woman executive" },
               { role:"Lead Designer", name:"IB Super Designs", img:"https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80", alt:"Graphic designer at work" },
@@ -195,9 +195,9 @@ export default function AboutPage() {
                 </div>
               </div>
             ))}
-          </div> */}
+          </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section style={{ background:"var(--navy)", padding:"96px 24px", position:"relative", overflow:"hidden" }}>
