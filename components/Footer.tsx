@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const FacebookIcon = () => (
@@ -23,23 +24,23 @@ const TwitterIcon = () => (
 
 export default function Footer() {
   return (
-    <footer style={{ background:"#111122", color:"#94a3b8" }}>
+    <footer style={{ background:"#2d7d6f", color:"#f3f3f3" }}>
       <div style={{ height:3, background:"linear-gradient(90deg,var(--primary),var(--accent),var(--primary-light))" }} />
 
       <div style={{ maxWidth:1200, margin:"0 auto", padding:"60px 24px 36px", display:"grid", gridTemplateColumns:"2fr 1fr 1fr 1.4fr", gap:44 }} className="footer-grid">
 
         {/* Brand */}
         <div>
-          <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:18 }}>
-            <div style={{ width:38, height:38, background:"linear-gradient(135deg,var(--primary),var(--primary-dark))", borderRadius:9, display:"flex", alignItems:"center", justifyContent:"center" }}>
-              <span style={{ color:"#fff", fontWeight:900, fontSize:15 }}>MH</span>
-            </div>
-            <div>
-              <div style={{ color:"#fff", fontWeight:900, fontSize:13, letterSpacing:0.3 }}>MYHOPE INTERNATIONAL</div>
-              <div style={{ fontSize:10, color:"#475569", letterSpacing:0.8, textTransform:"uppercase" }}>Concepts Ltd</div>
-            </div>
-          </div>
-          <p style={{ fontSize:13, lineHeight:1.8, color:"#64748b", maxWidth:250, marginBottom:22 }}>
+          <Link href="/" style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:10 }}>
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={250}
+              height={32}
+              className="object-contain bg-left"
+            />
+          </Link>
+          <p style={{ fontSize:13, lineHeight:1.8, color:"#dfdfdf", maxWidth:250, marginBottom:22, marginTop:16 }}>
             Building trust through quality construction, clean energy, and creative branding solutions across Nigeria.
           </p>
           <div style={{ display:"flex", gap:8 }}>
@@ -62,7 +63,7 @@ export default function Footer() {
           <ul style={{ listStyle:"none" }}>
             {[{ href:"/", label:"Home" },{ href:"/about", label:"About Us" },{ href:"/services", label:"Services" },{ href:"/contact", label:"Contact" }].map((l) => (
               <li key={l.href} style={{ marginBottom:10 }}>
-                <Link href={l.href} style={{ color:"#64748b", textDecoration:"none", fontSize:14 }}>→ {l.label}</Link>
+                <Link href={l.href} style={{ color:"#dfdfdf", textDecoration:"none", fontSize:14 }}>→ {l.label}</Link>
               </li>
             ))}
           </ul>
@@ -73,7 +74,7 @@ export default function Footer() {
           <h4 style={{ color:"#fff", fontWeight:800, fontSize:12, marginBottom:18, letterSpacing:1.5, textTransform:"uppercase" }}>Services</h4>
           <ul style={{ listStyle:"none" }}>
             {["Construction","Renewable Energy","Printing & Branding","IB Super Designs"].map((s) => (
-              <li key={s} style={{ marginBottom:10, color:"#64748b", fontSize:14 }}>→ {s}</li>
+              <li key={s} style={{ marginBottom:10, color:"#dfdfdf", fontSize:14 }}>→ {s}</li>
             ))}
           </ul>
         </div>
@@ -81,22 +82,22 @@ export default function Footer() {
         {/* Contact */}
         <div>
           <h4 style={{ color:"#fff", fontWeight:800, fontSize:12, marginBottom:18, letterSpacing:1.5, textTransform:"uppercase" }}>Contact</h4>
-          <div style={{ fontSize:13, lineHeight:2.2, color:"#64748b" }}>
-            <div>📍 Nigeria</div>
-            <div>📞 +234 800 000 0000</div>
-            <div>✉️ info@myhopeconcepts.com</div>
+          <div style={{ fontSize:13, lineHeight:2.2, color:"#dfdfdf" }}>
+            <div>📍 No 1, Habitation of Hope Crescent Laburo, Mowe, Ogun State.</div>
+            <div>📞 +234 802 388 4054</div>
+            <div>✉️ myhopeintenational@gmail.com</div>
           </div>
-          <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer" style={{ display:"inline-flex", alignItems:"center", gap:8, marginTop:14, padding:"9px 16px", background:"#16a34a", color:"#fff", borderRadius:8, fontSize:13, fontWeight:700, textDecoration:"none" }}>
+          <a href="https://wa.me/+2347049967260" target="_blank" rel="noopener noreferrer" style={{ display:"inline-flex", alignItems:"center", gap:8, marginTop:14, padding:"9px 16px", background:"#16a34a", color:"#fff", borderRadius:8, fontSize:13, fontWeight:700, textDecoration:"none" }}>
             💬 WhatsApp Us
           </a>
         </div>
       </div>
 
-      <div style={{ borderTop:"1px solid #1a1a33", maxWidth:1200, margin:"0 auto", padding:"18px 24px", display:"flex", flexWrap:"wrap", justifyContent:"space-between", alignItems:"center", gap:12 }}>
-        <p style={{ fontSize:12, color:"#334155" }}>© {new Date().getFullYear()} MYHOPE INTERNATIONAL CONCEPTS LTD. All rights reserved.</p>
+      <div style={{ borderTop:"1px solid #a8a8a8", maxWidth:1200, margin:"0 auto", padding:"18px 24px", display:"flex", flexWrap:"wrap", justifyContent:"space-between", alignItems:"center", gap:12 }}>
+        <p style={{ fontSize:12, color:"#b1b1b1" }}>© {new Date().getFullYear()} MYHOPE INTERNATIONAL CONCEPTS LTD. All rights reserved.</p>
         <div style={{ display:"flex", gap:20 }}>
-          <Link href="/privacy" style={{ fontSize:12, color:"#334155", textDecoration:"none" }}>Privacy Policy</Link>
-          <Link href="/terms" style={{ fontSize:12, color:"#334155", textDecoration:"none" }}>Terms & Conditions</Link>
+          <Link href="/privacy" style={{ fontSize:12, color:"#a8a8a8", textDecoration:"none" }}>Privacy Policy</Link>
+          <Link href="/terms" style={{ fontSize:12, color:"#a8a8a8", textDecoration:"none" }}>Terms & Conditions</Link>
         </div>
       </div>
 

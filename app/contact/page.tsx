@@ -87,7 +87,7 @@ export default function ContactPage() {
             </div>
 
             {/* WhatsApp */}
-            <a href="https://wa.me/2348000000000" target="_blank" rel="noopener noreferrer"
+            <a href="https://wa.me/+2347049967260" target="_blank" rel="noopener noreferrer"
               className="reveal delay-4"
               style={{ display:"flex", alignItems:"center", gap:12, padding:"15px 18px", background:"linear-gradient(135deg,#16a34a,#15803d)", color:"#fff", borderRadius:14, textDecoration:"none", marginBottom:24, boxShadow:"0 6px 20px rgba(22,163,74,0.28)", transition:"transform 0.2s" }}>
               <WhatsAppIcon />
