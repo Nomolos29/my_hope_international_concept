@@ -1,4 +1,6 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const FacebookIcon = () => (
@@ -188,7 +190,7 @@ export default function ContactPage() {
         {/* OpenStreetMap — Nigeria centered */}
         <iframe
           title="MYHOPE Location"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=3.0,6.2,3.8,6.8&layer=mapnik&marker=6.5244,3.3792"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=3.0,6.2,3.8,6.8&layer=mapnik&marker=6.8095,3.4412"
           style={{ width:"100%", height:"100%", border:"none", display:"block", filter:"saturate(0.85) brightness(0.97)" }}
           loading="lazy"
         />
@@ -197,47 +199,60 @@ export default function ContactPage() {
         <div style={{ position:"absolute", inset:0, background:"rgba(26,26,46,0.18)", pointerEvents:"none" }} />
 
         {/* Overlaid info card — bottom left */}
-        <div style={{
+        <div
+          className="flex flex-col justify-between items-center"
+          style={{
           position:"absolute", bottom:32, left:32,
           background:"rgba(255,255,255,0.97)",
           backdropFilter:"blur(16px)",
-          borderRadius:18, padding:"24px 28px",
+          borderRadius:18,
+          marginBottom: 20,
+          height:260,
+          overflow:"hidden",
           boxShadow:"0 20px 60px rgba(0,0,0,0.2)",
           minWidth:260, maxWidth:320,
           border:"1px solid rgba(255,255,255,0.8)",
           zIndex:10,
         }}>
-          <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:16 }}>
-            <div style={{ width:36, height:36, background:"var(--primary)", borderRadius:9, display:"flex", alignItems:"center", justifyContent:"center" }}>
-              <span style={{ color:"#fff", fontWeight:900, fontSize:13 }}>MH</span>
+          <Link
+            href="/"
+            style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:10, height:80 }}
+            className="bg-[#f7d12b] w-full justify-center py-5"
+          >
+            <Image
+              src="/logo.png"
+              alt="logo"
+              width={200}
+              height={32}
+              className="object-contain object-center"
+            />
+          </Link>
+          <div className="flex flex-col w-full items-center">
+            <div className="w-80%">
+              {[
+                { icon:"📍", text:"Nigeria — Nationwide Operations" },
+                { icon:"📞", text:"+234 704 006 7260" },
+                { icon:"✉️", text:"myhopeintenational@gmail.com" },
+              ].map((r) => (
+                <div key={r.text} style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8 }}>
+                  <span style={{ fontSize:14 }}>{r.icon}</span>
+                  <span style={{ fontSize:12, color:"var(--muted)" }}>{r.text}</span>
+                </div>
+              ))}
             </div>
-            <div>
-              <div style={{ fontWeight:900, fontSize:13, color:"var(--fg)", lineHeight:1.1 }}>MYHOPE INTERNATIONAL</div>
-              <div style={{ fontSize:10, color:"var(--muted)", letterSpacing:0.5 }}>CONCEPTS LTD</div>
+            <div style={{ marginTop:14, padding:14, borderTop:"1px solid var(--border)", display:"flex", gap:8, width:'100%', justifyContent:"center"}}>
+              {[
+                { label:"Facebook", Icon:FacebookIcon, bg:"#1877f2" },
+                { label:"Instagram", Icon:InstagramIcon, bg:"linear-gradient(45deg,#f09433,#dc2743,#bc1888)" },
+                { label:"LinkedIn", Icon:LinkedInIcon, bg:"#0a66c2" },
+                { label:"Twitter", Icon:TwitterIcon, bg:"#000" },
+              ].map(({ label, Icon, bg }) => (
+                <a key={label} href="#" aria-label={label}
+                  style={{ width:32, height:32, borderRadius:8, background:bg, display:"flex", alignItems:"center", justifyContent:"center", color:"#fff", textDecoration:"none", flexShrink:0 }}>
+                  <Icon />
+                </a>
+              ))}
             </div>
-          </div>
-          {[
-            { icon:"📍", text:"Nigeria — Nationwide Operations" },
-            { icon:"📞", text:"+234 800 000 0000" },
-            { icon:"✉️", text:"info@myhopeconcepts.com" },
-          ].map((r) => (
-            <div key={r.text} style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8 }}>
-              <span style={{ fontSize:14 }}>{r.icon}</span>
-              <span style={{ fontSize:12, color:"var(--muted)" }}>{r.text}</span>
-            </div>
-          ))}
-          <div style={{ marginTop:14, paddingTop:14, borderTop:"1px solid var(--border)", display:"flex", gap:8 }}>
-            {[
-              { label:"Facebook", Icon:FacebookIcon, bg:"#1877f2" },
-              { label:"Instagram", Icon:InstagramIcon, bg:"linear-gradient(45deg,#f09433,#dc2743,#bc1888)" },
-              { label:"LinkedIn", Icon:LinkedInIcon, bg:"#0a66c2" },
-              { label:"Twitter", Icon:TwitterIcon, bg:"#000" },
-            ].map(({ label, Icon, bg }) => (
-              <a key={label} href="#" aria-label={label}
-                style={{ width:32, height:32, borderRadius:8, background:bg, display:"flex", alignItems:"center", justifyContent:"center", color:"#fff", textDecoration:"none", flexShrink:0 }}>
-                <Icon />
-              </a>
-            ))}
           </div>
         </div>
 

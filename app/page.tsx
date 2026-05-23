@@ -56,7 +56,7 @@ export default function HomePage() {
               </div>
 
               <h1 className="hero-title" style={{ fontSize:"clamp(2.4rem,5vw,4rem)", fontWeight:900, lineHeight:1.08, color:"#fff", letterSpacing:-2, marginBottom:24 }}>
-                We Build.{" "}
+                We Build.{" "}<br />
                 <span className="gradient-text">We Power.</span>
                 <br />
                 We <span style={{ color:"var(--accent)" }}>Design.</span>
