@@ -52,9 +52,9 @@ export default function Navbar() {
               color: pathname === l.href
                 ? (scrolled ? "var(--primary)" : "#7dd3c8")
                 : (scrolled ? "var(--fg)" : "var(--fg)"),
-              background: pathname === l.href
-                ? (scrolled ? "var(--primary-bg)" : "rgba(255,255,255,0.09)")
-                : "transparent",
+              // background: pathname === l.href
+              //   ? (scrolled ? "var(--primary-bg)" : "rgba(255,255,255,0.09)")
+              //   : "transparent",
               textDecoration:"none", transition:"all 0.2s",
             }}>
               {l.label}
