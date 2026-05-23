@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -23,7 +24,7 @@ export default function Navbar() {
   return (
     <header style={{
       position:"sticky", top:0, zIndex:100,
-      background: scrolled ? "rgba(255,255,255,0.97)" : "rgba(26,26,46,0.96)",
+      background: scrolled ? "rgba(255,255,255,0.97)" : "rgba(238, 238, 238, 0.96)",
       backdropFilter:"blur(12px)",
       borderBottom: scrolled ? "1px solid var(--border)" : "1px solid rgba(255,255,255,0.07)",
       boxShadow: scrolled ? "0 2px 20px rgba(0,0,0,0.07)" : "none",
@@ -33,13 +34,13 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" style={{ textDecoration:"none", display:"flex", alignItems:"center", gap:10 }}>
-          <div style={{ width:38, height:38, background:"linear-gradient(135deg,var(--primary),var(--primary-dark))", borderRadius:10, display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0 }}>
-            <span style={{ color:"#fff", fontWeight:900, fontSize:15, letterSpacing:-0.5 }}>MH</span>
-          </div>
-          <div>
-            <div style={{ fontWeight:900, fontSize:13, color: scrolled ? "var(--primary)" : "#fff", lineHeight:1.1, letterSpacing:0.3 }}>MYHOPE</div>
-            <div style={{ fontSize:9, color: scrolled ? "var(--muted)" : "rgba(255,255,255,0.5)", letterSpacing:0.8, textTransform:"uppercase" }}>International Concepts Ltd</div>
-          </div>
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width={150}
+            height={32}
+            className="object-contain"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -50,7 +51,7 @@ export default function Navbar() {
               fontWeight: pathname === l.href ? 700 : 500,
               color: pathname === l.href
                 ? (scrolled ? "var(--primary)" : "#7dd3c8")
-                : (scrolled ? "var(--fg)" : "rgba(255,255,255,0.78)"),
+                : (scrolled ? "var(--fg)" : "var(--fg)"),
               background: pathname === l.href
                 ? (scrolled ? "var(--primary-bg)" : "rgba(255,255,255,0.09)")
                 : "transparent",
