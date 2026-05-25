@@ -72,7 +72,7 @@ export default function ContactPage() {
             <div style={{ display:"flex", flexDirection:"column", gap:14, marginBottom:24 }}>
               {[
                 { icon:"📍", label:"Office Address", value:"No 1, Habitation of Hope Crescent  Laburo, Mowe,  Ogun State.", sub:"We Deliver Nationwide", color:"var(--primary-bg)", accent:"var(--primary)" },
-                { icon:"📞", label:"Phone Number", value:"+234 802 388 4054, +234 704 006 7260", sub:"Mon – Fri, 8am – 6pm", color:"#fdf4e7", accent:"var(--accent)" },
+                { icon:"📞", label:"Phone Number", value:"+234 802 388 4054, +234 704 996 7260", sub:"Mon – Fri, 8am – 6pm", color:"#fdf4e7", accent:"var(--accent)" },
                 { icon:"✉️", label:"Email Address", value:"myhopeintenational@gmail.com", sub:"We reply within 24 hours", color:"var(--primary-bg)", accent:"var(--primary)" },
               ].map((c, i) => (
                 <div key={c.label} className={`reveal delay-${i + 1}`} style={{ background:"#fff", borderRadius:14, padding:"16px 18px", border:"1px solid var(--border)", display:"flex", gap:14, alignItems:"center", boxShadow:"0 2px 10px rgba(0,0,0,0.04)" }}>
@@ -231,7 +231,7 @@ export default function ContactPage() {
             <div className="w-80%">
               {[
                 { icon:"📍", text:"Nigeria — Nationwide Operations" },
-                { icon:"📞", text:"+234 704 006 7260" },
+                { icon:"📞", text:"+234 704 996 7260" },
                 { icon:"✉️", text:"myhopeintenational@gmail.com" },
               ].map((r) => (
                 <div key={r.text} style={{ display:"flex", alignItems:"center", gap:8, marginBottom:8 }}>
