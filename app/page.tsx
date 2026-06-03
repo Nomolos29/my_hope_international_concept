@@ -170,7 +170,7 @@ export default function HomePage() {
                   <h3 style={{ fontSize:"clamp(1.3rem,2.5vw,1.8rem)", fontWeight:900, lineHeight:1.1, marginBottom:14 }}>{s.title}<br />{s.sub}</h3>
                   <p style={{ fontSize:14, opacity:0.82, lineHeight:1.75 }}>{s.desc}</p>
                 </div>
-                <Link href="/services" style={{ display:"inline-flex", alignItems:"center", gap:8, marginTop:28, fontSize:13, fontWeight:700, color:"#fff", background:"rgba(255,255,255,0.15)", padding:"9px 16px", borderRadius:8, textDecoration:"none", width:"fit-content", border:"1px solid rgba(255,255,255,0.22)", transition:"background 0.2s" }}>
+                <Link href="/products" style={{ display:"inline-flex", alignItems:"center", gap:8, marginTop:28, fontSize:13, fontWeight:700, color:"#fff", background:"rgba(255,255,255,0.15)", padding:"9px 16px", borderRadius:8, textDecoration:"none", width:"fit-content", border:"1px solid rgba(255,255,255,0.22)", transition:"background 0.2s" }}>
                   Learn more →
                 </Link>
               </div>
